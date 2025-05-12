@@ -28,3 +28,11 @@ rule Tailscale_Running_Process
     condition:
         for any $str in ($proc1, $proc2) : ( filepath contains $str or proc.name == $str )
 }
+
+rule Test_Contains
+{
+    strings:
+        $test_string = "test data"
+    condition:
+        $test_string contains "data"
+}
