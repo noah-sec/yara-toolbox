@@ -25,5 +25,5 @@ rule Tailscale_Running_Process
         $proc1 = "tailscale.exe" ascii wide
         $proc2 = "tailscaled.exe" ascii wide
     condition:
-        for any $str in ($proc1, $proc2) : ( filepath(pe.rule, $str) or proc.name == $str )
+        for any $str in ($proc1, $proc2) : ( filepath contains $str or proc.name == $str )
 }
