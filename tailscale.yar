@@ -1,3 +1,4 @@
+import "filepath"
 // Rule to detect Tailscale executable files by path. This is set to critical severity because Tailscale can be used for file exfiltration.
 rule Tailscale_Executable_Paths
 {
